@@ -1,3 +1,5 @@
+// Purpose: Home Page Screen for the app which displays the list of products from the API
+
 import 'package:flutter/material.dart';
 import 'package:meragi_data/screens/product_details.dart';
 import 'package:provider/provider.dart';
@@ -27,6 +29,15 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Product List'),
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            onPressed: () {
+              productProvider.getData();
+            },
+            icon: const Icon(Icons.refresh),
+          )
+        ],
       ),
       body: productProvider.isLoading
           ? const Center(

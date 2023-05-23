@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meragi_data/providers/product_provider.dart';
-import 'package:meragi_data/screens/home_page.dart';
+import 'package:meragi_data/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.green,
         ),
-        home: const HomePage(),
+        home: const SplashScreen(),
       ),
     );
   }
