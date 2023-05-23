@@ -1,6 +1,7 @@
 // Purpose: Home Page Screen for the app which displays the list of products from the API
 
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:meragi_data/screens/product_details.dart';
 import 'package:provider/provider.dart';
 
@@ -16,9 +17,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    final productProvider =
-        Provider.of<ProductProvider>(context, listen: false);
-    productProvider.getData();
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      final productProvider =
+          Provider.of<ProductProvider>(context, listen: false);
+      productProvider.getData();
+    });
     super.initState();
   }
 
@@ -51,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                   final product = productProvider.products[index];
                   return ListTile(
                       title: Text(product.title),
-                      subtitle: Text(product.price.toString()),
+                      subtitle: Text('Price: \$${product.price.toString()}'),
                       leading: Image.network(
                         product.image,
                         width: 100,

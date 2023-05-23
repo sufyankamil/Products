@@ -34,6 +34,7 @@ class Product {
   }
 }
 
+// Product provider to fetch data from API and notify listeners when data is fetched and when it is loading data from API
 class ProductProvider with ChangeNotifier {
   List<Product> _products = [];
 

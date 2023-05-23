@@ -1,6 +1,7 @@
 // Purpose: Splash Screen for the app which displays the splash screen for 3 seconds and then navigates to the home page
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:meragi_data/screens/home_page.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -31,6 +32,11 @@ class _SplashScreenState extends State<SplashScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: const [
+          Icon(
+            FontAwesomeIcons.magento,
+            size: 100,
+          ),
+          SizedBox(height: 20),
           Text(
             'Let\'s spread Meragi all over the world!',
             textAlign: TextAlign.center,

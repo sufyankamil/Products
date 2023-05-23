@@ -32,7 +32,8 @@ class ProductDetailScreen extends StatelessWidget {
             child: Text(
               product.title,
               textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style:
+                  const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
           const SizedBox(height: 8),
@@ -43,10 +44,11 @@ class ProductDetailScreen extends StatelessWidget {
           Text('Description: ${product.description}',
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 14)),
-          const SizedBox(height: 8),
+          const SizedBox(height: 10),
           Text('Category: ${product.category}',
               textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 14)),
+              style:
+                  const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
           const SizedBox(height: 8),
           ElevatedButton(
             onPressed: () {
